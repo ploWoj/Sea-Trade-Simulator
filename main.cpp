@@ -2,17 +2,17 @@
 #include <iostream>
 #include <memory>
 
-#include "alcohol.hpp"
-#include "cargo.hpp"
-#include "game.hpp"
-#include "fruit.hpp"
-#include "island.hpp"
-#include "item.hpp"
-#include "map.hpp"
-#include "player.hpp"
-#include "ship.hpp"
-#include "store.hpp"
-#include "time.hpp"
+#include "include/alcohol.hpp"
+#include "include/cargo.hpp"
+#include "include/game.hpp"
+#include "include/fruit.hpp"
+#include "include/island.hpp"
+#include "include/item.hpp"
+#include "include/map.hpp"
+#include "include/player.hpp"
+#include "include/ship.hpp"
+#include "include/store.hpp"
+#include "include/time.hpp"
 
 constexpr size_t start_money = 1'000'000;
 constexpr size_t game_days = 100;

@@ -1,13 +1,13 @@
-#include "ship.hpp"
+#include "../include/ship.hpp"
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
 #include <memory>
 
-#include "alcohol.hpp"
-#include "cargo.hpp"
-#include "fruit.hpp"
-#include "item.hpp"
+#include "../include/alcohol.hpp"
+#include "../include/cargo.hpp"
+#include "../include/fruit.hpp"
+#include "../include/item.hpp"
 
 // Class responsible for managing Ships in the game.
 

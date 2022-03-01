@@ -1,4 +1,4 @@
-#include "item.hpp"
+#include "../include/item.hpp"
 #include <limits>
 
 Item::Item(const std::string& name, size_t amount, size_t basePrice, Rarity rarity)

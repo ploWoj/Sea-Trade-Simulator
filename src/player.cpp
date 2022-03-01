@@ -1,10 +1,10 @@
-#include "player.hpp"
+#include "../include/player.hpp"
 #include <iostream>
 #include <numeric>
 #include <utility>
 
-#include "cargo.hpp"
-#include "ship.hpp"
+#include "../include/cargo.hpp"
+#include "../include/ship.hpp"
 
 Player::Player(std::shared_ptr<Ship> ship, const size_t &money)
     : ship_(std::move(ship)), money_(money)

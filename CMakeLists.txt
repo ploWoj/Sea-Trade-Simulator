@@ -1,19 +1,21 @@
-cmake_minimum_required(VERSION 3.10)
- 
+cmake_minimum_required(VERSION 3.2)
 project(SHM_2077)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(FILES
-    island.cpp
-    map.cpp
-    player.cpp
-    ship.cpp
-    cargo.cpp
-    store.cpp
-    alcohol.cpp
-    item.cpp 
-    fruit.cpp
-    time.cpp
-    game.cpp
+     src/island.cpp
+    src/map.cpp
+    src/player.cpp
+    src/ship.cpp
+    src/cargo.cpp
+    src/store.cpp
+    src/alcohol.cpp
+    src/item.cpp 
+    src/fruit.cpp
+    src/time.cpp
+    src/game.cpp
     )
 
 set(FLAGS 

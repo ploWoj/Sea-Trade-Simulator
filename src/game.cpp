@@ -1,12 +1,12 @@
-#include "game.hpp"
+#include "../include/game.hpp"
 
 #include <algorithm>
 #include <cctype>
 #include <iomanip>
 #include <random>
 
-#include "coordinates.hpp"
-#include "map.hpp"
+#include "../include/coordinates.hpp"
+#include "../include/map.hpp"
 
 template <typename inCheck>
 void inStreamCheck(inCheck& val) {

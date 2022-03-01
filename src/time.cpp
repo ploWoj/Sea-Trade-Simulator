@@ -1,8 +1,8 @@
- #include "time.hpp"
+ #include "../include/time.hpp"
 #include <iostream>
 #include <list>
 #include <memory>
-#include "iObserver.hpp"
+#include "../include/iObserver.hpp"
 
 void Time::attachObserver(IObserver *observer)
 {

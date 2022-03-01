@@ -1,9 +1,9 @@
-#include "store.hpp"
-#include "alcohol.hpp"
-#include "fruit.hpp"
-#include "item.hpp"
-#include "player.hpp"
-#include "ship.hpp"
+#include "../include/store.hpp"
+#include "../include/alcohol.hpp"
+#include "../include/fruit.hpp"
+#include "../include/item.hpp"
+#include "../include/player.hpp"
+#include "../include/ship.hpp"
 
 #include <algorithm>
 #include <iomanip>
