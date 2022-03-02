@@ -14,7 +14,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-
+include_directories("{$gmock_SOURCE_DIR}/include")
 
 set(FILES
     src/island.cpp
@@ -45,17 +45,13 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 
 
 set(TESTS
-    tests/friutTest.cpp
+    tests/tests.cpp
 )
 
 add_executable(${PROJECT_NAME}-gt ${TEST} ${FILES})
-target_link_libraries(${PROJECT_NAME}-gt ${PROJECT_NAME}-lib gtest_main)
-
+target_link_libraries(${PROJECT_NAME}-gt gtest_main gmock gtest)
+target_link_directories(${PROJECT_NAME}-gt PUBLIC ${CMAKE_SOURCE_DIR})
 target_compile_options(${PROJECT_NAME}-gt PRIVATE ${FLAGS})
 
 enable_testing()
 add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-gt)
-# target_compile_options(${PROJECT_NAME}-gt PRIVATE ${FLAGS})s
-
-
-# target_link_libraries(${PROJECT_NAME}-ut2 ${PROJECT_NAME}-lib gtest_main)

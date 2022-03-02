@@ -19,23 +19,23 @@ public:
     Ship& operator-=(size_t num);
     Ship& operator+=(size_t num);
 
-    size_t getCapacity() const;
-    size_t getMaxCrew() const;
-    size_t getSpeed() const;
-    size_t getCrew() const;
-    std::string getName() const;
-    size_t getId() const;
+    virtual size_t getCapacity() const;
+    virtual  size_t getMaxCrew() const;
+    virtual size_t getSpeed() const;
+    virtual size_t getCrew() const;
+    virtual std::string getName() const;
+    virtual size_t getId() const;
     std::shared_ptr<Cargo> getCargo(size_t index) const;    
     std::vector<std::shared_ptr<Cargo>> getCargosVector() const;
 
     std::vector<std::shared_ptr<Cargo>>::iterator findMatchCargo(std::shared_ptr<Cargo> cargo);
 
-    void setName(const std::string& name);
+    virtual void setName(const std::string& name);
 
-    void addCargo(const std::shared_ptr<Cargo>& cargo, size_t amount);
+    virtual void addCargo(const std::shared_ptr<Cargo>& cargo, size_t amount);
 
-    void unload(const std::shared_ptr<Cargo>& cargo, size_t amount);
-    void load(const std::shared_ptr<Cargo>& cargo, size_t amount);
+    virtual void unload(const std::shared_ptr<Cargo>& cargo, size_t amount);
+    virtual void load(const std::shared_ptr<Cargo>& cargo, size_t amount);
 
     friend std::ostream& operator<<(std::ostream& os, const Ship& ship);
     void nextDay() override;
