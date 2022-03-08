@@ -10,7 +10,7 @@ Therefor code presented here is not a complete application by any means.
 * [Technologies](#technologies)
 
 ## General info
-This project of See Trade Game allowed to travelling and trading player on diffrent isladns. 
+This project of See Trade Game allowed to travelling and trading player on diffrent islands. 
 ## Technologies
 * c++ 
 * stl (cointeiners, alogrithm, smart pointers, etc.)
