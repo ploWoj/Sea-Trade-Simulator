@@ -1,4 +1,4 @@
-# University Sea Trade Simulator
+#  Sea Trade Simulator
 
 Homework project for Coders School.
 I have put every effort to meet the requirements and not go beyond.
