@@ -1,3 +1,0 @@
-/home/cppuser/Desktop/cpp/Sea-Trade-Simulator/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
-/home/cppuser/Desktop/cpp/Sea-Trade-Simulator/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/home/cppuser/Desktop/cpp/Sea-Trade-Simulator/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir

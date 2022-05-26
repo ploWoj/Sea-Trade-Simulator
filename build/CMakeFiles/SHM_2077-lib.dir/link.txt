@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSHM_2077-lib.a  CMakeFiles/SHM_2077-lib.dir/src/island.cpp.o CMakeFiles/SHM_2077-lib.dir/src/map.cpp.o CMakeFiles/SHM_2077-lib.dir/src/player.cpp.o CMakeFiles/SHM_2077-lib.dir/src/ship.cpp.o CMakeFiles/SHM_2077-lib.dir/src/cargo.cpp.o CMakeFiles/SHM_2077-lib.dir/src/store.cpp.o CMakeFiles/SHM_2077-lib.dir/src/alcohol.cpp.o CMakeFiles/SHM_2077-lib.dir/src/item.cpp.o CMakeFiles/SHM_2077-lib.dir/src/fruit.cpp.o CMakeFiles/SHM_2077-lib.dir/src/time.cpp.o CMakeFiles/SHM_2077-lib.dir/src/game.cpp.o
-/usr/bin/ranlib libSHM_2077-lib.a
