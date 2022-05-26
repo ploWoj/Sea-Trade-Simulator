@@ -47,11 +47,11 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 set(TESTS
     tests/tests.cpp
 )
+enable_testing()
+add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-gt)
 
 add_executable(${PROJECT_NAME}-gt ${TEST} ${FILES})
 target_link_libraries(${PROJECT_NAME}-gt gtest_main gmock gtest)
 target_link_directories(${PROJECT_NAME}-gt PUBLIC ${CMAKE_SOURCE_DIR})
 target_compile_options(${PROJECT_NAME}-gt PRIVATE ${FLAGS})
 
-enable_testing()
-add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-gt)

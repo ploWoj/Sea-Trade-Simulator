@@ -1,15 +1,17 @@
 #pragma once
 
 #include "cargo.hpp"
-//Class responsible for managing Fruit in the game.
-class Fruit : public Cargo {
+// Class responsible for managing Fruit in the game.
+class Fruit : public Cargo
+{
 public:
-   Fruit(const std::string& name, size_t amount, size_t basePrice, size_t expirationDate, std::shared_ptr<Time> time); 
+    Fruit(const std::string &name, size_t amount, size_t basePrice, size_t expirationDate);
+    Fruit(const std::string &name, size_t amount, size_t basePrice, size_t expirationDate, std::shared_ptr<Time> time);
     ~Fruit() override;
 
-    Fruit& operator--();
+    Fruit &operator--();
 
-    //Methods override from Cargo class.
+    // Methods override from Cargo class.
     size_t getPrice() const override;
 
     size_t getExpirationDate() const { return expirationDate_; };
@@ -19,7 +21,7 @@ public:
 
     std::shared_ptr<Cargo> clone(const size_t &) const;
 
-    void setTime(const std::shared_ptr<Time>&) override;
+    void setTime(const std::shared_ptr<Time> &) override;
 
     void detachingObserver() override;
 
