@@ -2,8 +2,15 @@
 #include "gmock/gmock.h"
 #include <memory>
 
+#include "../include/player.hpp"
 #include "../include/fruit.hpp"
-#include "../include/ship.hpp"
+#include "shipMock.hpp"
+
+using ::testing::DoAll;
+using ::testing::Return;
+using ::testing::SaveArg;
+using ::testing::StrictMock;
+using ::testing::Test;
 
 namespace fruit_test
 {
@@ -45,15 +52,39 @@ namespace fruit_test
         void SetUp()
         {
             ship = new Ship(capacity, maxCrew, crew, speed, name, id);
-            
         };
     };
 
-    TEST_F(ShipTest, ShouldBuyCargo) {
-        
+    TEST_F(ShipTest, ShouldBuyCargo)
+    {
 
-    //     ship->addCargo(cargo1, 5);
+        //     ship->addCargo(cargo1, 5);
     }
+
+    constexpr size_t money = 50000;
+    class PlayerTest : public Test
+    {
+    public:
+        void SetUp()
+        {
+            auto ship_ = std::make_shared<ShipMock>();
+            player_ = std::make_shared<Player>(ship_, money);
+        }
+        ShipMock* getShip() const { return ship_.get();}
+        Player* getPlayer() const { return player_.get(); }
+
+
+    private:
+        std::shared_ptr<ShipMock> ship_;
+        std::shared_ptr<Player> player_;
+    };
+
+    TEST_F(PlayerTest, ShuoldBuyItem) {
+        constexpr const size_t amount = 50;
+        const std::shared_ptr<Fruit> apple = std::make_shared<Fruit>("apple", 100, 50, 20);
+        getPlayer()->buy(apple, money);
+    }
+
 }
 int main(int argc, char **argv)
 {
