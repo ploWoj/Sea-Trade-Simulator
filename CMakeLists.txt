@@ -15,43 +15,44 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 include_directories("{$gmock_SOURCE_DIR}/include")
-
-set(FILES
-    src/island.cpp
-    src/map.cpp
-    src/player.cpp
-    src/ship.cpp
-    src/cargo.cpp
-    src/store.cpp
-    src/alcohol.cpp
+set (SOURCE_FILE
+    src/alcohol.cpp 
+    src/cargo.cpp 
+    src/coordinates.cpp 
+    src/fruit.cpp 
+    src/game.cpp 
+    src/island.cpp 
     src/item.cpp 
-    src/fruit.cpp
-    src/time.cpp
-    src/game.cpp
-    )
+    src/map.cpp 
+    src/player.cpp 
+    src/ship.cpp 
+    src/store.cpp 
+    src/time.cpp)
 
-set(FLAGS 
+set (FLAGS 
     -Wall 
-    #-Wextra 
-    -Wpedantic 
-    -Wconversion 
-    -O0)
+    -Wextra 
+    # -Werror 
+    -Wpedantic
+    -g)
 
-add_library(${PROJECT_NAME}-lib STATIC ${FILES})
-add_executable(${PROJECT_NAME} main.cpp ${FILES})
+add_library(${PROJECT_NAME}-lib STATIC ${SOURCE_FILE})
+add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME}-ut tests/tests.cpp)
+
+set(DIRECTORIES 
+        src)
+    
+target_include_directories(${PROJECT_NAME} PRIVATE ${DIRECTORIES})
+target_include_directories(${PROJECT_NAME}-lib PRIVATE ${DIRECTORIES})
+target_include_directories(${PROJECT_NAME}-ut PRIVATE ${DIRECTORIES})
+
 target_compile_options(${PROJECT_NAME} PRIVATE ${FLAGS})
 target_compile_options(${PROJECT_NAME}-lib PRIVATE ${FLAGS})
+target_compile_options(${PROJECT_NAME}-ut PRIVATE ${TEST_FLAGS})
+
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
+target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib gtest_main gmock gtest)
 
-
-set(TESTS
-    tests/tests.cpp
-)
 enable_testing()
-add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-gt)
-
-add_executable(${PROJECT_NAME}-gt ${TEST} ${FILES})
-target_link_libraries(${PROJECT_NAME}-gt gtest_main gmock gtest)
-target_link_directories(${PROJECT_NAME}-gt PUBLIC ${CMAKE_SOURCE_DIR})
-target_compile_options(${PROJECT_NAME}-gt PRIVATE ${FLAGS})
-
+add_test(NAME Tests-gtest COMMAND ${PROJECT_NAME}-ut)

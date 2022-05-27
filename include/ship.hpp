@@ -13,6 +13,7 @@ class Ship : public IObserver
 {
 public:
     Ship();
+    Ship(size_t capacity, size_t maxCrew, size_t crew, size_t speed, const std::string &name, size_t id);
     Ship(size_t capacity, size_t maxCrew, size_t crew, size_t speed, const std::string& name, size_t id, const std::shared_ptr<Time>& time);
     ~Ship();
 

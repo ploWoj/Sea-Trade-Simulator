@@ -12,7 +12,8 @@
 // Class responsible for managing Ships in the game.
 
 Ship::Ship() : id_(-1){};
-
+Ship::Ship(size_t capacity, size_t maxCrew, size_t crew, size_t speed, const std::string &name, size_t id) : 
+    capacity_(capacity), maxCrew_(maxCrew), crew_(crew), speed_(speed), name_(name), id_(id) {}
 Ship::Ship(size_t capacity, size_t maxCrew, size_t crew, size_t speed, const std::string &name, size_t id, const std::shared_ptr<Time> &time)
     : capacity_(capacity), maxCrew_(maxCrew), crew_(crew), speed_(speed), name_(name), id_(id), time_(time)
 {
