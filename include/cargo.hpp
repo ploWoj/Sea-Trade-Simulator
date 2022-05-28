@@ -15,9 +15,9 @@ public:
     Cargo& operator-=(size_t amount);
     bool operator==(const Cargo&) const;
 
-    std::string getName() const;
-    size_t getAmount() const;
-    size_t getBasePrice() const;
+    virtual std::string getName() const;
+    virtual size_t getAmount() const;
+    virtual size_t getBasePrice() const;
 
     virtual size_t getPrice() const = 0;
 

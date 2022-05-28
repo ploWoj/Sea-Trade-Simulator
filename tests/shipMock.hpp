@@ -15,5 +15,5 @@ public:
     MOCK_METHOD(void, setName,(const std::string));
     MOCK_METHOD(void, addCargo, (const std::shared_ptr<Cargo>&, size_t));
     MOCK_METHOD(void, unload,(const std::shared_ptr<Cargo> &, size_t ));
-    MOCK_METHOD(void, load,(const std::shared_ptr<Cargo> &, size_t ));
+    MOCK_METHOD(void, load,(const std::shared_ptr<Cargo> &apple, int));
 };

@@ -45,10 +45,10 @@ std::string Cargo::getName() const {
     return name_;
 }
 
-size_t Cargo::getAmount() const {
+ size_t Cargo::getAmount() const {
     return amount_;
 }
 
-size_t Cargo::getBasePrice() const {
+ size_t Cargo::getBasePrice() const {
     return basePrice_;
 }

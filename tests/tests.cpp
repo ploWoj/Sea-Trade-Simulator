@@ -5,6 +5,7 @@
 #include "../include/player.hpp"
 #include "../include/fruit.hpp"
 #include "shipMock.hpp"
+#include "cargoMock.hpp"
 
 using ::testing::DoAll;
 using ::testing::Return;
@@ -55,11 +56,32 @@ namespace fruit_test
         };
     };
 
-    TEST_F(ShipTest, ShouldBuyCargo)
-    {
+    // TEST_F(ShipTest, ShouldBuyCargo)
+    // {
 
-        //     ship->addCargo(cargo1, 5);
-    }
+    //     //     ship->addCargo(cargo1, 5);
+    // }
+
+    // class CargoTest : public Test
+    // {
+    //     void SetUp()
+    //     {
+    //         auto cargo = std::make_shared<CargoMock>();
+    //         ship_ = std::make_shared<Ship>(capacity, maxCrew, crew, speed, name, id);
+    //     }
+
+    //     CargoMock* getCargo() const { return cargo_.get(); }
+    //     Ship* getShip() const { return ship_.get(); }
+
+    // private:
+    //     std::shared_ptr<CargoMock> cargo_;
+    //     std::shared_ptr<Ship> ship_;
+    // };
+
+    // TEST_F(CargoMock, ShouldReturnAmount) {
+    //    getShip()->addCargo()
+
+    // }
 
     constexpr size_t money = 50000;
     class PlayerTest : public Test
@@ -70,19 +92,26 @@ namespace fruit_test
             auto ship_ = std::make_shared<ShipMock>();
             player_ = std::make_shared<Player>(ship_, money);
         }
-        ShipMock* getShip() const { return ship_.get();}
-        Player* getPlayer() const { return player_.get(); }
-
+        ShipMock *getShip() { return ship_.get(); }
+        Player *getPlayer() const { return player_.get(); }
 
     private:
         std::shared_ptr<ShipMock> ship_;
         std::shared_ptr<Player> player_;
     };
 
-    TEST_F(PlayerTest, ShuoldBuyItem) {
+    TEST_F(PlayerTest, ShuoldBuyItem)
+    {
         constexpr const size_t amount = 50;
-        const std::shared_ptr<Fruit> apple = std::make_shared<Fruit>("apple", 100, 50, 20);
-        getPlayer()->buy(apple, money);
+        std::shared_ptr<Fruit> apple = std::make_shared<Fruit>("apple", 100, 50, 20);
+        constexpr size_t expected = money - (20 * 50);
+
+        EXPECT_CALL(*getShip(), load(apple)).WillOnce(Return(nullptr));
+
+        getPlayer()->buy(apple, 20)
+        {
+            EXPECT_EQ(getPlayer()->getMoney(), expected);
+        }
     }
 
 }
