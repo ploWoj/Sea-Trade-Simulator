@@ -18,15 +18,15 @@ size_t Coordinates::getPositionY() const
     return positionY_;
 }
 
-bool Coordinates::operator==(const Coordinates& n_pos) const
+bool Coordinates::operator==(const Coordinates &n_pos) const
 {
-        return positionX_ == n_pos.getPositionX() && positionY_ == n_pos.getPositionY();
+    return positionX_ == n_pos.getPositionX() && positionY_ == n_pos.getPositionY();
 };
 
-size_t Coordinates::distance(const Coordinates& lhs, const Coordinates& rhs)
+size_t Coordinates::distance(const Coordinates &lhs, const Coordinates& rhs)
 {
     return std::round(std::sqrt(std::pow((static_cast<int>(lhs.getPositionX()) - static_cast<int>(rhs.getPositionX())),
-                                    2)
-        + std::pow((static_cast<int>(lhs.getPositionY()) - static_cast<int>(rhs.getPositionY())),
-            2)));
+                                         2) +
+                                std::pow((static_cast<int>(lhs.getPositionY()) - static_cast<int>(rhs.getPositionY())),
+                                         2)));
 }
