@@ -2,11 +2,12 @@
 #include "coordinates.hpp"
 #include "store.hpp"
 
-class Island{    
+class Island
+{
 public:
     Island() = default;
 
-    Island(Coordinates position, const std::shared_ptr<Store>& store);
+    Island(Coordinates position, const std::shared_ptr<Store> &store);
 
     Coordinates getPosition() const;
     void setPosition(Coordinates);
