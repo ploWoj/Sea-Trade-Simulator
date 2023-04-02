@@ -247,7 +247,7 @@ void Game::travel()
     daysToGo.reserve(islands.size());
     for (const auto &island : islands)
     {
-        int amountOfDays = island.getPosition().distance(player_->getPlayerPosition()) / ship_->getSpeed();
+        int amountOfDays = island.getPosition().distance(player_->getPlayerPosition().getPositionX()) / ship_->getSpeed();
         if (amountOfDays == 0 && !(island.getPosition() == player_->getPlayerPosition()))
         {
             daysToGo.push_back(1);
