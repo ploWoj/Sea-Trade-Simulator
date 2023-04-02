@@ -21,7 +21,6 @@ Fruit &Fruit::operator--()
     }
     purchaseDate_--;
     return *this;
-    
 }
 
 void Fruit::nextDay()
