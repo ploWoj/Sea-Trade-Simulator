@@ -1,4 +1,4 @@
- #include "../include/time.hpp"
+#include "../include/time.hpp"
 #include <iostream>
 #include <list>
 #include <memory>
@@ -21,19 +21,22 @@ void Time::onTimeChange()
 }
 
 void Time::notifyAll()
-{   
+{
     for (auto it = observerList_.begin(); it != observerList_.end(); it++)
     {
-        if (*it) {
+        if (*it)
+        {
             (*it)->nextDay();
         }
     }
 }
 
-size_t Time::getDays() const {
+size_t Time::getDays() const
+{
     return daysNum_;
 }
 
-std::list<IObserver*> Time::getList() const {
+std::list<IObserver *> Time::getList() const
+{
     return observerList_;
 }
